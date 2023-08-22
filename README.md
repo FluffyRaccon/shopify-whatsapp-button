@@ -22,6 +22,6 @@ Easy to integrate, great customization.
 Into your theme settings: **Config-> settings_schema.json**, you can choose where you want to add this section. It's meant to be part of theme settings, not product/page/section.
 
 ## Configure your button
-![Adjusting button's settings](example.jpg)
+![Adjusting button's settings](example.png)
 
 Within the "Customize theme" section in Shopify you can adjust the information of the button.
