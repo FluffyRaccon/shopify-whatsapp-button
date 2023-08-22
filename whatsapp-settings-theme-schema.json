@@ -1,0 +1,85 @@
+{
+    "name": "WhatsApp Button",
+    "settings": [
+        {
+            "type": "header",
+            "content": "General settings"
+        },
+        {
+            "type": "checkbox",
+            "id": "enable_wabutton",
+            "label": "Enable WhatsApp button",
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "whatsapp_label",
+            "label": "WhatsApp label",
+            "info": "Label over the WhatsApp icon for your customers, be brief.",
+            "default": "Contact us"
+        },
+        {
+            "type": "text",
+            "id": "whatsapp_number",
+            "label": "WhatsApp Number",
+            "info": "Add your number with country code. Ie. your number is 3456789715 and country code +39 then add number 393456789715",
+            "default": "523456789123"
+        },
+        {
+            "type": "textarea",
+            "id": "whatsapp_message",
+            "label": "Welcome message",
+            "default": "Set the WhatsApp message when redirected to your chat"
+        }, 
+        {
+            "type": "header",
+            "content": "Position settings"
+        },
+        {
+            "type": "select",
+            "id": "whatsapp_position",
+            "label": "WhatsApp Position",
+            "options":[
+                {
+                    "value": "right",
+                    "label": "Right"
+                },
+                {
+                    "value": "left",
+                    "label": "Left"
+                }
+            ],
+            "default": "right"
+        },
+        {
+            "type": "range",
+            "id": "wabutton_imgsize",
+            "label": "Icon size",
+            "default": 48,
+            "min": 24,
+            "max": 64,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "wabutton_horizontal",
+            "label": "Horizontal distance",
+            "default": 30,
+            "min": 5,
+            "max": 50,
+            "step": 1,
+            "unit": "px"
+        },
+        {
+            "type": "range",
+            "id": "wabutton_vertical",
+            "label": "Vertical distance",
+            "default": 30,
+            "min": 5,
+            "max": 80,
+            "step": 1,
+            "unit": "px"
+        }
+    ]
+}

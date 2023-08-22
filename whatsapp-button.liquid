@@ -1,0 +1,8 @@
+{% if settings.enable_wabutton %}
+  <div class="whatsapp-btn-container" style="z-index: 500;">
+    <a href="https://wa.me/{{ settings.whatsapp_number }}?text={{ settings.whatsapp_message }}" target="_blank" class="whatsapp-btn">
+      <img src="{{ 'ic_whatsapp.svg' | asset_url }}" loading="eager" alt="WhatsApp Logo" width="{{ settings.wabutton_imgsize | default:"48" }}px" height="{{ settings.wabutton_imgsize | default:"48" }}px">
+    </a>
+    <span>{{ settings.whatsapp_label }}</span>
+  </div>
+{% endif %}

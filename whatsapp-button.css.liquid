@@ -1,0 +1,68 @@
+.whatsapp-btn-container{
+    {% if settings.whatsapp_position == "right" %}right: -{{ settings.wabutton_horizontal | times: 2}}px; {% endif %}
+    {% if settings.whatsapp_position == "left" %}left: -{{ settings.wabutton_horizontal | times: 2}}px; {% endif %}
+    opacity: 0;
+    bottom: {{ settings.wabutton_vertical | default:"30" }}px;
+    position: fixed;
+    animation: fade-up 1000ms forwards;
+    animation-delay: 0.8s;
+}
+.whatsapp-btn-container a{
+    display: inline-block;
+}
+.whatsapp-btn-container span{
+    top: -2em;
+    left: -0.5em;
+    opacity: 0;
+    color: #075e54;
+    font-weight: bold;
+    position: absolute;
+    transition: all 0.4s;
+    text-shadow:
+    -1px -1px 0 #fff,
+     1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+     1px  1px 0 #fff;
+    transform: rotatez(20deg) translateX(10px);
+}
+.whatsapp-btn-container .whatsapp-btn img{
+    width: {{ settings.wabutton_imgsize | default:"48" }}px;
+    height: {{ settings.wabutton_imgsize | default:"48" }}px;
+    padding: 10px;
+    transition: 0.3s;
+    border-radius: 50px;
+    background-color: #25d366;
+    box-shadow: 3px 10px 10px rgba(0,0,0,0.15);
+}
+.whatsapp-btn-container .whatsapp-btn:hover img{
+    transform: scale(1.2);
+}
+
+.whatsapp-btn-container .whatsapp-btn:hover + span{
+    opacity: 1;
+    transform: rotatez(0deg) translateX(0px);
+}
+
+@keyframes fade-up {
+    100%{
+        opacity: 1;
+        {% if settings.whatsapp_position == "right" %}right: {{ settings.wabutton_horizontal }}px; {% endif %}
+        {% if settings.whatsapp_position == "left" %}left: {{ settings.wabutton_horizontal }}px; {% endif %}
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .whatsapp-btn-container{
+        {% if settings.whatsapp_position == "right" %}right:- {{ settings.wabutton_horizontal | minus: 10 | times: 2 }}px; {% endif %}
+        {% if settings.whatsapp_position == "left" %}left:- {{ settings.wabutton_horizontal | minus: 10 | times: 2 }}px; {% endif %}
+        bottom:{{ settings.wabutton_vertical | minus: 10 }}px;
+    }
+
+    @keyframes fade-up {
+        100%{
+            opacity: 1;
+            {% if settings.whatsapp_position == "right" %}right: {{ settings.wabutton_horizontal | minus: 10 }}px; {% endif %}
+            {% if settings.whatsapp_position == "left" %}left: {{ settings.wabutton_horizontal | minus: 10 }}px; {% endif %}
+        }
+    }
+}
